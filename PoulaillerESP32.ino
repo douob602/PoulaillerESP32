@@ -26,7 +26,7 @@
 
 Servo monServo;
 
-// 1️⃣ Déclaration des Devices
+// 1- Déclaration des Devices
 static Switch pompe("Pompe", NULL);  // Device 1
 static Device servoMotor("ServoMoteur", "esp.device.motor", NULL); // Device 2
 static Param servoAngle("Angle", "esp.param.slider", value(90), PROP_FLAG_READ | PROP_FLAG_WRITE);
@@ -54,13 +54,13 @@ void sysProvEvent(arduino_event_t *sys_event) {
       Serial.printf("Provisioning started. Connect to \"%s\" via BLE\nPOP: %s\n", SERVICE_NAME, POP);
       break;
     case ARDUINO_EVENT_PROV_CRED_SUCCESS:
-      Serial.println("✅ Wi-Fi provisioning successful.");
+      Serial.println("Wi-Fi provisioning successful.");
       break;
     case ARDUINO_EVENT_PROV_CRED_FAIL:
-      Serial.println("❌ Wi-Fi provisioning failed.");
+      Serial.println("Wi-Fi provisioning failed.");
       break;
     case ARDUINO_EVENT_PROV_END:
-      Serial.println("✅ Provisioning finished.");
+      Serial.println("Provisioning finished.");
       break;
   }
 }
@@ -75,11 +75,11 @@ void setup() {
 
   Node node = RMaker.initNode(DEVICE_NAME);
 
-  // 2️⃣ Pompe
+  // 2- Pompe
   pompe.addCb(write_callback);
   node.addDevice(pompe);
 
-  // 3️⃣ Servo avec slider
+  // 3- Servo avec slider
   servoAngle.addBounds(value(0), value(180), value(1));
   servoAngle.addUIType(ESP_RMAKER_UI_SLIDER);
   servoMotor.addParam(servoAngle);
