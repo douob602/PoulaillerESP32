@@ -1,3 +1,18 @@
+/***************************************************************
+ * BIBLIOTHÈQUES NÉCESSAIRES (à installer avant compilation)
+ *
+ * ESP RainMaker (version 1.4.0 ou plus récent)
+ *    Nom : ESP RainMaker
+ *    Lien : https://github.com/espressif/esp-rainmaker
+ *
+ * ESP32 Servo (version 0.11.0 recommandé)
+ *    Nom : ESP32Servo
+ *    Lien : https://github.com/madhephaestus/ESP32Servo
+ *
+ * Carte ESP32 (URL du gestionnaire de carte à ajouter dans l’IDE Arduino) :
+ *    https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+ *    Nom de la carte : ESP32 Dev Module (ou WROOM32, selon ton modèle)
+ ***************************************************************/
 #include "RMaker.h"
 #include "WiFi.h"
 #include "WiFiProv.h"
